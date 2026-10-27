@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7fb">
+  <title>CognifyX — Aptitude & Learning Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-theme="light" data-wallpaper="aurora">
+  <svg aria-hidden="true" class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/>
+      <rect x="14" y="3" width="7" height="7" rx="2"/>
+      <rect x="3" y="14" width="7" height="7" rx="2"/> 
+      <rect x="14" y="14" width="7" height="7" rx="2"/>
+    </symbol>
+    <symbol id="i-exam" viewBox="0 0 24 24">
+      <path d="M8 4h8l2 2v14H6V6z"/>
+      <path d="M9 4v4h6V4M9 12h6M9 16h6"/>
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 24 24">
+      <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5z"/>
+      <path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20M9 7h7M9 10h7"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <circle cx="9" cy="8" r="3"/>
+      <path d="M3 20v-2a6 6 0 0 1 12 0v2z"/>
+      <path d="M16 5.5a3 3 0 0 1 0 5.8M18 14a5 5 0 0 1 3 4.5V20h-3"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+      <path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/>
+    </symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="m19.4 15 .1.1 1.1 1.7-1.8 3.1-2-.5a8 8 0 0 1-1.8 1l-.5 2.1h-3.6l-.5-2.1a8 8 0 0 1-1.8-1l-2 .5-1.8-3.1 1.2-1.7a8 8 0 0 1 0-2l-1.2-1.7 1.8-3.1 2 .5a8 8 0 0 1 1.8-1L10.9 5h3.6l.5 2.1a8 8 0 0 1 1.8 1l2-.5 1.8 3.1-1.2 1.7a8 8 0 0 1 0 2Z" transform="translate(-1 -1) scale(1.08)"/>
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24">
+      <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="10.8" cy="10.8" r="6.8"/> 
+      <path d="m16 16 5 5"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.7 8.7 0 1 0 20.5 14Z"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 5l7 7-7 7"/>
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24">
+      <path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12 4 4L19 6"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M12 7v5l3 2"/>
+    </symbol>
+    <symbol id="i-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <circle cx="12" cy="12" r="5"/>
+      <circle cx="12" cy="12" r="1"/>
+    </symbol>
+    <symbol id="i-award" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="5"/>
+      <path d="m8 12-1 9 5-3 5 3-1-9"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16"/>
+    </symbol>
+    <symbol id="i-more" viewBox="0 0 24 24">
+      <circle cx="5" cy="12" r="1"/>
+      <circle cx="12" cy="12" r="1"/>
+      <circle cx="19" cy="12" r="1"/>
+    </symbol>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" data-page-link="dashboard"><span class="brand-mark" aria-label="CognifyX aptitude logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-hidden="true">
+
+          <rect x="1" y="1" width="38" height="38" rx="12" fill="currentColor" opacity="0.12"/>
+
+          <circle cx="20" cy="20" r="11.5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+
+          <circle cx="20" cy="20" r="5.2" fill="none" stroke="currentColor" stroke-width="2.4"/>
+
+          <path d="M20 5.5v4M20 30.5v4M5.5 20h4M30.5 20h4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+
+          <path d="m17.2 20 2 2 4.2-4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+        </svg>
+      </span>
+      <span><strong>CognifyX</strong><small>APTITUDE & LEARNING</small></span></a>
+      <div class="workspace-pill"><span class="status-dot"></span> Academic workspace <svg><use href="#i-more"/></svg></div>
+      <label class="sidebar-search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="Search anything…" aria-label="Search dashboard"><kbd>⌘ K</kbd></label>
+      <nav class="nav-groups" aria-label="Main navigation">
+        <div class="nav-label">WORKSPACE</div>
+        <button class="nav-item active" data-page="dashboard"><svg><use href="#i-grid"/></svg>Overview</button>
+        <button class="nav-item" data-page="exams"><svg><use href="#i-exam"/></svg>Exams <span class="nav-count">3</span></button>
+        <button class="nav-item" data-page="questions"><svg><use href="#i-book"/></svg>Question bank</button>
+        <button class="nav-item" data-page="students"><svg><use href="#i-users"/></svg>Students</button>
+        <button class="nav-item" data-page="analytics"><svg><use href="#i-chart"/></svg>Analytics</button>
+        <div class="nav-label spaced">MANAGEMENT</div>
+        <button class="nav-item" data-page="results"><svg><use href="#i-award"/></svg>Results & reports</button>
+        <button class="nav-item" data-page="settings"><svg><use href="#i-settings"/></svg>Appearance & settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon"><svg><use href="#i-target"/></svg></div><strong>Make progress every day</strong><p>Small steps make smarter learners.</p><button class="text-button" data-page="analytics">View insights <svg><use href="#i-arrow"/></svg></button></div>
+        <div class="profile-row"><div class="avatar avatar-purple">NC</div><div class="profile-text"><strong>Nayab Chaudhary</strong><small>Administrator</small></div><button class="icon-button tiny" data-page="settings" aria-label="Profile settings"><svg><use href="#i-more"/></svg></button></div>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open navigation"><svg><use href="#i-menu"/></svg></button>
+        <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="pageCrumb">Overview</strong></div>
+        <div class="topbar-actions">
+          <div class="current-date" id="currentDate">Friday, October 23</div>
+          <button class="icon-button theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode" title="Toggle light/dark mode"><svg id="themeIcon"><use href="#i-moon"/></svg></button>
+          <button class="icon-button" id="notifyButton" aria-label="Notifications"><svg><use href="#i-bell"/></svg><i class="notification-dot"></i></button>
+          <div class="top-avatar-stack"><span class="avatar avatar-blue">TS</span><span class="avatar avatar-orange">AK</span><span class="avatar avatar-pink">HM</span><span class="stack-count">+8</span></div>
+          <button class="button button-primary button-small" id="inviteButton"><svg><use href="#i-plus"/></svg> Invite students</button>
+        </div>
+      </header>
+      <div class="page-content">
+        <section class="page-view active" id="page-dashboard">
+          <div class="page-heading"><div><div class="eyebrow"><span class="live-dot"></span> YOUR APTITUDE DASHBOARD</div><h1>Welcome back, Nayab <span class="wave">📊</span></h1><p class="subtitle">Here’s a quick look at student progress, practice tests and results.</p></div><div class="heading-actions"><button class="button button-secondary" id="exportOverview"><svg><use href="#i-download"/></svg> Export overview</button><button class="button button-primary" data-page="exams"><svg><use href="#i-plus"/></svg> Create an exam</button></div></div>
+          <div class="metric-grid">
+            <article class="metric-card"><div class="metric-top"><span class="metric-label">Total students</span><span class="metric-icon purple"><svg><use href="#i-users"/></svg></span></div><div class="metric-main"><strong id="metricStudents">536</strong><span class="metric-change positive">↗ 8.2%</span></div><div class="metric-foot"><span class="tiny-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>vs. last month</span></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-label">Average score</span><span class="metric-icon mint"><svg><use href="#i-target"/></svg></span></div><div class="metric-main"><strong id="metricAverage">78.4<span class="metric-unit">%</span></strong><span class="metric-change positive">↗ 4.6%</span></div><div class="metric-foot"><span class="mini-progress"><i style="width:78.4%"></i></span><span>Program average</span></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-label">Exams completed</span><span class="metric-icon orange"><svg><use href="#i-exam"/></svg></span></div><div class="metric-main"><strong id="metricExams">64</strong><span class="metric-change positive">↗ 12.5%</span></div><div class="metric-foot"><span class="metric-foot-icon">📝</span><span id="examMetricCaption">12 completed this week</span></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-label">Question bank</span><span class="metric-icon blue"><svg><use href="#i-book"/></svg></span></div><div class="metric-main"><strong id="metricQuestions">250</strong><span class="metric-change neutral">Across 4 topics</span></div><div class="metric-foot"><span class="tiny-bars teal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>Ready for practice</span></div></article>
+          </div>
+          <div class="dashboard-grid">
+            <article class="panel performance-panel"><div class="panel-header"><div><h2>Performance overview</h2><p>Average scores across recent assessments</p></div><select id="chartRange" class="select-small" aria-label="Chart time range"><option value="6">Last 6 months</option><option value="12">Last 12 months</option></select></div><div class="chart-legend"><span><i class="legend-dot violet"></i> Average score</span><span><i class="legend-dot lavender"></i> Completion volume</span></div><div class="performance-chart" id="performanceChart" role="img" aria-label="Average score trend chart"></div><div class="chart-footer"><span><i class="trend-arrow">↗</i> <strong>+12.8%</strong> <span>performance improvement</span></span><span class="chart-note">Compared with previous period</span></div></article>
+            <article class="panel category-panel"><div class="panel-header"><div><h2>Skill distribution</h2><p>Performance by aptitude category</p></div><button class="icon-button" data-page="analytics" aria-label="View analytics"><svg><use href="#i-more"/></svg></button></div><div id="categoryBars" class="category-bars"></div><div class="skill-insight"><span class="insight-symbol"><svg><use href="#i-target"/></svg></span><div><strong>Room to grow</strong><p>Quantitative Aptitude is the top opportunity for improvement.</p></div></div><button class="text-button full-width" data-page="analytics">Explore skill insights <svg><use href="#i-arrow"/></svg></button></article>
+          </div>
+          <div class="lower-grid">
+            <article class="panel activity-panel"><div class="panel-header"><div><h2>Recent exam activity</h2><p>Latest assessments and performance</p></div><button class="text-button" data-page="results">View all <svg><use href="#i-arrow"/></svg></button></div><div class="table-wrap"><table><thead><tr><th>ASSESSMENT</th><th>PARTICIPANTS</th><th>AVG. SCORE</th><th>STATUS</th></tr></thead><tbody id="recentExamsTable"></tbody></table></div></article>
+            <article class="panel focus-panel"><div class="panel-header"><div><h2>Focus for today</h2><p>Small actions, real progress</p></div><span class="focus-date">TODAY</span></div><div class="focus-list"><label class="focus-item"><input type="checkbox" class="focus-check"><span class="custom-check"><svg><use href="#i-check"/></svg></span><span><strong>Review weak topics</strong><small>Quantitative Aptitude · 15 min</small></span></label><label class="focus-item"><input type="checkbox" class="focus-check"><span class="custom-check"><svg><use href="#i-check"/></svg></span><span><strong>Complete a practice test</strong><small>Logical Reasoning · 10 questions</small></span></label><label class="focus-item"><input type="checkbox" class="focus-check"><span class="custom-check"><svg><use href="#i-check"/></svg></span><span><strong>Review student progress</strong><small>Check this week’s results</small></span></label></div><div class="focus-progress"><div><span>Daily progress</span><strong id="focusCount">0 of 3</strong></div><div class="progress-track"><i id="focusProgressBar" style="width:0%"></i></div></div></article>
+          </div>
+        </section>
+
+        <section class="page-view" id="page-exams">
+          <div class="page-heading"><div><div class="eyebrow">ASSESSMENT CENTER</div><h1>Exams & practice</h1><p class="subtitle">Create assessments or launch an interactive aptitude practice test.</p></div><div class="heading-actions"><button class="button button-secondary" id="examRulesButton">Scoring rules</button><button class="button button-primary" id="createExamButton"><svg><use href="#i-plus"/></svg> New assessment</button></div></div>
+          <div class="exam-hero panel"><div class="exam-hero-copy"><span class="hero-kicker"><svg><use href="#i-target"/></svg> READY WHEN YOU ARE</span><h2>Sharpen your thinking.<br><span>Measure your growth.</span></h2><p>Take a short adaptive practice test across reasoning, quantitative skills, verbal ability and computing fundamentals.</p><div class="hero-stats"><span><svg><use href="#i-clock"/></svg> 10 questions</span><span><svg><use href="#i-target"/></svg> +4 / −1 scoring</span><span><svg><use href="#i-award"/></svg> Instant report</span></div><button class="button button-primary button-large" id="startTestButton">Start practice test <svg><use href="#i-arrow"/></svg></button></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-core"><svg><use href="#i-target"/></svg></div><span class="floating-chip chip-a">+18% growth</span><span class="floating-chip chip-b">Focus mode</span><span class="floating-chip chip-c">Study tips</span></div></div>
+          <div class="section-head"><div><h2>Assessment library</h2><p class="subtitle">Your available assessment templates</p></div><div class="filter-actions"><input class="input-small" id="examSearch" placeholder="Search exams…"><select class="select-small" id="examStatusFilter"><option value="all">All status</option><option value="Ready">Ready</option><option value="Draft">Draft</option></select></div></div>
+          <div class="exam-cards" id="examCards"></div>
+          <article class="panel table-panel"><div class="panel-header"><div><h2>Recent attempts</h2><p>Submissions saved on this device</p></div><button class="button button-secondary button-small" data-page="results">View results</button></div><div class="table-wrap"><table><thead><tr><th>STUDENT</th><th>ASSESSMENT</th><th>SCORE</th><th>ACCURACY</th><th>DATE</th></tr></thead><tbody id="examAttemptsTable"></tbody></table></div></article>
+        </section>
+
+        <section class="page-view" id="page-questions">
+          <div class="page-heading"><div><div class="eyebrow">CONTENT MANAGEMENT</div><h1>Question bank</h1><p class="subtitle">Build a balanced bank of questions for meaningful assessments.</p></div><div class="heading-actions"><button class="button button-secondary" id="exportQuestions"><svg><use href="#i-download"/></svg> Export CSV</button><button class="button button-primary" id="addQuestionButton"><svg><use href="#i-plus"/></svg> Add question</button></div></div>
+          <div class="metric-grid compact-metrics"><article class="metric-card"><div class="metric-top"><span class="metric-label">Total questions</span><span class="metric-icon purple"><svg><use href="#i-book"/></svg></span></div><div class="metric-main"><strong id="questionCountTotal">12</strong></div><div class="metric-foot"><span>Across all categories</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Easy</span><span class="metric-icon mint"><svg><use href="#i-check"/></svg></span></div><div class="metric-main"><strong id="questionEasyCount">4</strong></div><div class="metric-foot"><span>Foundational practice</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Medium</span><span class="metric-icon orange"><svg><use href="#i-target"/></svg></span></div><div class="metric-main"><strong id="questionMediumCount">5</strong></div><div class="metric-foot"><span>Core competency</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Hard</span><span class="metric-icon blue"><svg><use href="#i-award"/></svg></span></div><div class="metric-main"><strong id="questionHardCount">3</strong></div><div class="metric-foot"><span>Advanced reasoning</span></div></article></div>
+          <div class="panel table-panel"><div class="table-toolbar"><div class="filter-actions"><label class="search-input"><svg><use href="#i-search"/></svg><input id="questionSearch" placeholder="Search question or topic…"></label><select class="select-small" id="questionCategoryFilter"><option value="all">All categories</option><option>Quantitative Aptitude</option><option>Logical Reasoning</option><option>Verbal Ability</option><option>Computer Fundamentals</option></select><select class="select-small" id="questionDifficultyFilter"><option value="all">All difficulty</option><option>Easy</option><option>Medium</option><option>Hard</option></select></div><span class="table-count" id="questionFilteredCount">12 questions</span></div><div class="table-wrap"><table><thead><tr><th>QUESTION</th><th>CATEGORY</th><th>DIFFICULTY</th><th>MARKS</th><th>ACTIONS</th></tr></thead><tbody id="questionTable"></tbody></table></div></div>
+        </section>
+
+        <section class="page-view" id="page-students">
+          <div class="page-heading"><div><div class="eyebrow">LEARNER DIRECTORY</div><h1>Students</h1><p class="subtitle">Manage learner profiles and review their assessment progress.</p></div><div class="heading-actions"><button class="button button-secondary" id="exportStudents"><svg><use href="#i-download"/></svg> Export CSV</button><button class="button button-primary" id="addStudentButton"><svg><use href="#i-plus"/></svg> Add student</button></div></div>
+          <div class="metric-grid compact-metrics"><article class="metric-card"><div class="metric-top"><span class="metric-label">Registered</span><span class="metric-icon purple"><svg><use href="#i-users"/></svg></span></div><div class="metric-main"><strong id="studentCountTotal">6</strong></div><div class="metric-foot"><span>Saved locally</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Active this week</span><span class="metric-icon mint"><svg><use href="#i-chart"/></svg></span></div><div class="metric-main"><strong id="studentActiveCount">4</strong></div><div class="metric-foot"><span>Based on recorded attempts</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Top performer</span><span class="metric-icon orange"><svg><use href="#i-award"/></svg></span></div><div class="metric-main"><strong class="metric-text-value" id="studentTopName">Anwar H.</strong></div><div class="metric-foot"><span id="studentTopScore">92% best result</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Need practice</span><span class="metric-icon blue"><svg><use href="#i-target"/></svg></span></div><div class="metric-main"><strong id="studentSupportCount">2</strong></div><div class="metric-foot"><span>Below 60% latest result</span></div></article></div>
+          <div class="panel table-panel"><div class="table-toolbar"><label class="search-input"><svg><use href="#i-search"/></svg><input id="studentSearch" placeholder="Search name or email…"></label><span class="table-count" id="studentFilteredCount">6 students</span></div><div class="table-wrap"><table><thead><tr><th>STUDENT</th><th>JOINED</th><th>ATTEMPTS</th><th>BEST SCORE</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="studentTable"></tbody></table></div></div>
+        </section>
+
+        <section class="page-view" id="page-analytics">
+          <div class="page-heading"><div><div class="eyebrow">DATA & INSIGHTS</div><h1>Performance analytics</h1><p class="subtitle">Turn test attempts into useful learning signals.</p></div><div class="heading-actions"><button class="button button-primary" id="exportAnalytics"><svg><use href="#i-download"/></svg> Export analytics</button></div></div>
+          <div class="dashboard-grid analytics-grid"><article class="panel"><div class="panel-header"><div><h2>Category mastery</h2><p>Mean score by subject area</p></div></div><div id="analyticsCategoryBars" class="category-bars roomy-bars"></div></article><article class="panel"><div class="panel-header"><div><h2>Learning insights</h2><p>Rule-based recommendations from results</p></div><span class="metric-icon purple"><svg><use href="#i-target"/></svg></span></div><div id="recommendations" class="recommendations-list"></div></article></div>
+          <div class="lower-grid"><article class="panel"><div class="panel-header"><div><h2>Score distribution</h2><p>Distribution of saved attempts</p></div></div><div class="distribution-chart" id="scoreDistribution"></div></article><article class="panel"><div class="panel-header"><div><h2>Assessment quality</h2><p>Question-bank overview</p></div></div><div id="qualityMetrics" class="quality-list"></div></article></div>
+          <div class="panel note-panel"><div class="note-icon"><svg><use href="#i-target"/></svg></div><div><strong>How recommendations work</strong><p>Recommendations are based on the practice results saved in this demo. They are meant to help students choose what to revise next, not to make high-stakes decisions about ability.</p></div></div>
+        </section>
+
+        <section class="page-view" id="page-results">
+          <div class="page-heading"><div><div class="eyebrow">OUTCOMES & RECORDS</div><h1>Results & reports</h1><p class="subtitle">Review previous attempts, compare outcomes and export records.</p></div><div class="heading-actions"><button class="button button-secondary" id="clearResultsButton">Clear attempts</button><button class="button button-primary" id="exportResults"><svg><use href="#i-download"/></svg> Export results CSV</button></div></div>
+          <div class="metric-grid compact-metrics"><article class="metric-card"><div class="metric-top"><span class="metric-label">Saved attempts</span><span class="metric-icon purple"><svg><use href="#i-exam"/></svg></span></div><div class="metric-main"><strong id="resultsAttemptCount">0</strong></div><div class="metric-foot"><span>Stored in this browser</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Average result</span><span class="metric-icon mint"><svg><use href="#i-chart"/></svg></span></div><div class="metric-main"><strong id="resultsAverage">—</strong></div><div class="metric-foot"><span>Across saved attempts</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Best result</span><span class="metric-icon orange"><svg><use href="#i-award"/></svg></span></div><div class="metric-main"><strong id="resultsBest">—</strong></div><div class="metric-foot"><span>Highest percentage score</span></div></article><article class="metric-card"><div class="metric-top"><span class="metric-label">Current streak</span><span class="metric-icon blue"><svg><use href="#i-target"/></svg></span></div><div class="metric-main"><strong id="resultsStreak">0</strong></div><div class="metric-foot"><span>Consecutive days with an attempt</span></div></article></div>
+          <div class="panel table-panel"><div class="panel-header"><div><h2>Attempt history</h2><p>Each submitted test is recorded with its score and category feedback.</p></div></div><div class="table-wrap"><table><thead><tr><th>STUDENT</th><th>DATE & TIME</th><th>CORRECT / TOTAL</th><th>SCORE</th><th>ACCURACY</th><th>REVIEW</th></tr></thead><tbody id="resultsTable"></tbody></table></div></div>
+        </section>
+
+        <section class="page-view" id="page-settings">
+          <div class="page-heading"><div><div class="eyebrow">PERSONALIZE YOUR WORKSPACE</div><h1>Appearance & settings</h1><p class="subtitle">Tune the dashboard to your preferred look and feel.</p></div></div>
+          <div class="settings-layout"><div class="settings-main"><article class="panel settings-card"><div class="settings-title"><span class="metric-icon purple"><svg><use href="#i-sun"/></svg></span><div><h2>Theme mode</h2><p>Switch between a light workspace and a comfortable dark theme.</p></div></div><div class="theme-options"><button class="theme-option" data-theme-choice="light"><span class="theme-preview preview-light"><i></i><i></i><i></i></span><span><strong>Light mode</strong><small>Bright and clean</small></span><span class="choice-check">✓</span></button><button class="theme-option" data-theme-choice="dark"><span class="theme-preview preview-dark"><i></i><i></i><i></i></span><span><strong>Dark mode</strong><small>Easy on the eyes</small></span><span class="choice-check">✓</span></button><button class="theme-option" data-theme-choice="system"><span class="theme-preview preview-system"><i></i><i></i><i></i></span><span><strong>System preference</strong><small>Follow your device</small></span><span class="choice-check">✓</span></button></div></article>
+            <article class="panel settings-card"><div class="settings-title"><span class="metric-icon mint"><svg><use href="#i-target"/></svg></span><div><h2>Background style</h2><p>Choose an ambience behind your workspace cards.</p></div></div><div class="wallpaper-options"><button class="wallpaper-option" data-wallpaper-choice="aurora"><span class="wallpaper-preview wallpaper-aurora"></span><strong>Aurora</strong><small>Soft color glow</small></button><button class="wallpaper-option" data-wallpaper-choice="mesh"><span class="wallpaper-preview wallpaper-mesh"></span><strong>Mesh grid</strong><small>Subtle technical grid</small></button><button class="wallpaper-option" data-wallpaper-choice="plain"><span class="wallpaper-preview wallpaper-plain"></span><strong>Minimal</strong><small>Clean solid background</small></button><button class="wallpaper-option" data-wallpaper-choice="midnight"><span class="wallpaper-preview wallpaper-midnight"></span><strong>Midnight glow</strong><small>Deep gradient ambience</small></button></div></article>
+            <article class="panel settings-card"><div class="settings-title"><span class="metric-icon orange"><svg><use href="#i-settings"/></svg></span><div><h2>Data & storage</h2><p>Your demo records are stored locally in this browser.</p></div></div><div class="setting-row"><div><strong>Export all workspace data</strong><small>Download students, questions, attempts and preferences in JSON format.</small></div><button class="button button-secondary button-small" id="backupData">Download backup</button></div><div class="setting-row"><div><strong>Restore demo data</strong><small>Reset this browser to the original sample workspace.</small></div><button class="button button-danger button-small" id="resetDemoData">Reset demo</button></div></article></div>
+            <aside class="panel preview-card"><div class="panel-header"><div><h2>Live preview</h2><p>Your current workspace appearance</p></div><span class="live-preview-dot"></span></div><div class="mini-dashboard-preview"><div class="mini-preview-top"><span></span><span></span><span></span></div><div class="mini-preview-body"><div class="mini-preview-side"><i></i><i></i><i></i><i></i></div><div class="mini-preview-content"><div class="mini-preview-title"></div><div class="mini-preview-cards"><i></i><i></i><i></i></div><div class="mini-preview-chart"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="mini-preview-lines"><i></i><i></i><i></i></div></div></div></div><div class="preview-summary"><span>Theme</span><strong id="currentThemeLabel">Light mode</strong><span>Background</span><strong id="currentWallpaperLabel">Aurora</strong></div><button class="button button-primary full-width" id="settingsThemeToggle">Switch theme mode</button></aside></div>
+        </section>
+      </div>
+      <footer class="app-footer"><span>© 2026 CognifyX</span><span><i class="footer-status"></i> Local workspace operational</span><span>Built for academic demonstration</span><span><i class="footer-status"></i>Developed by Nayab Chaudhary</span></footer>
+    </main>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><div class="modal-card" id="modalCard" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-header"><div><div class="eyebrow" id="modalEyebrow">COGNIFYX WORKSPACE</div><h2 id="modalTitle">Modal title</h2></div><button class="icon-button" id="closeModal" aria-label="Close dialog">×</button></div><div class="modal-body" id="modalBody"></div><div class="modal-footer" id="modalFooter"></div></div></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

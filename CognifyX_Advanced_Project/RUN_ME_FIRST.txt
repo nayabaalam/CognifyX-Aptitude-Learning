@@ -1,0 +1,17 @@
+COGNIFYX ADVANCED — QUICK START
+
+1. Extract the ZIP to a normal folder.
+2. Make sure Python 3 is installed.
+3. Recommended: install MinGW-w64/GCC and add gcc.exe to PATH for the C engine.
+4. Double-click start_cognifyx.bat.
+5. Use the browser at http://127.0.0.1:8765.
+6. Keep the black command window open while using the project.
+7. Run demo_c_engine.bat if you want to demonstrate the C algorithms separately.
+8. Press Ctrl+C in the command window to stop.
+
+DARK MODE: click the moon/sun icon in the top bar or go to Appearance & settings.
+BACKGROUND: go to Appearance & settings and choose Aurora, Mesh grid, Minimal or Midnight glow.
+
+The app stores its records in your browser. Download a JSON backup from Appearance & settings before resetting browser data.
+
+Important: The browser UI is HTML/CSS/JavaScript. The scoring and adaptive-difficulty decision engine is implemented in C and connected through a small Python standard-library server. GCC is required for the live C engine; without it the UI falls back to JavaScript scoring.
